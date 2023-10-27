@@ -129,7 +129,7 @@ const Game = () => {
                 <button type="button" class="key" value="Y" onClick={handleButtonClick}>Y</button>
                 <button type="button" class="key" value="Z" onClick={handleButtonClick}>Z</button>  
               </div>
-              <button id="sucess" className="btn btn-success text-light py-3 fw-bold mt-5" style={{display:"none",cursor:"auto"}}>Congrats! You guessed ALGEBRA in {attempt} attempts</button>
+              <button id="sucess" className="btn btn-success text-light py-3 fw-bold mt-5" style={{display:"none",cursor:"auto"}}>Congrats! You guessed {words[0].toUpperCase()} in {attempt} attempts</button>
               <button className='btn btn-primary w-25 btn-md mt-4 fw-bold rounded-pill' onClick={handleRefreshClick}>Refresh</button>
           </div>
           </div>
