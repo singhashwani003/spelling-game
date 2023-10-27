@@ -1,12 +1,79 @@
-.App {
-  text-align: center;
+body{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 24px;
+  font-weight: 400;
+  color: #42526E;
+  margin:0;
+  padding:0;
+  background-color: #fff;
+}
+.bg-secondary{
+  background-color: rgb(237, 237, 237)!important;
+}
+.attempts{
+  height: 58px;
+  width: 120px;
+}
+.word-input{
+      height: 50px;
+      width: 50px;
+      background-color: lightgoldenrodyellow;
+      border-radius: 6px;
+      border: 1px solid lightgoldenrodyellow;
+}
+.keyboard{
+  width: 500px;
+}
+.key {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #dee8f5;;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px 0px 0 4px;
+  cursor: pointer;
+  color: #000;
+  background-color: #dee8f5;;
+  font-size: 16px;
+  font-weight: 700;
 }
 
+.key:hover {
+  background-color: rgb(237, 237, 237);
+}
+.keyboard button::selection{
+  background-color: #7a7b7c;
+}
+.attemp-num{
+  cursor: pointer;
+}
+.remain-num{
+  cursor: pointer;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-
+input[type="text"]:focus{
+  outline: none;
+  border: none;
+}
+@media (max-width: 576px) {
+  .keyboard {
+    width: 100%;
+  }
+  .mt-5{
+    margin-top: 2rem!important;
+  }
+  .mb-5{
+    margin-bottom: 1rem!important;
+  }
+  .score{
+    padding-left: 16px!important;
+  }
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -27,7 +94,11 @@
 .App-link {
   color: #61dafb;
 }
-
+.word-input{
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -36,3 +107,4 @@
     transform: rotate(360deg);
   }
 }
+
