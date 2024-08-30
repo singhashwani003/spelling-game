@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { alphabetArray } from "../../constants/Constant";
-
-const Game = () => {
+const Game = () => {   
   const [words, setWords] = useState([]);
   const wordLengthThreshold = 7;
   const requiredWordCount = 3;
@@ -16,21 +15,21 @@ const Game = () => {
   var len=0; 
   const fetchRandomWords = () => {
     const apiUrl = "https://random-word-api.herokuapp.com/word?number=3";
+    console.log(apiUrl);
     const fetchWordsWithCriteria = async () => {
       let fetchedWords = [];
       while (fetchedWords.length < requiredWordCount) {
         const response = await fetch(apiUrl);
         if (response.ok) {
           const data = await response.json();
-          const validWords = data.filter(
+          const validWords = data.filter( 
             (word) => word.length >= wordLengthThreshold
           );
-          fetchedWords = fetchedWords.concat(validWords);
+          fetchedWords = fetchedWords.concat(validWords); 
         }
       }
       return fetchedWords.slice(0, requiredWordCount);
     };
-
     fetchWordsWithCriteria()
       .then((result) => {
         let arr = Array.from(result[0]);
@@ -53,7 +52,7 @@ const Game = () => {
 
   const renderDivs = () => {
     if (words.length > 0) {
-      const firstWord = words[0];
+      const firstWord = words[1];
       len = words[0].length;
       const divArray = [];
 
@@ -62,7 +61,7 @@ const Game = () => {
           <input
             key={i}
             id={i}
-            type="text"
+            type="text2"
             readOnly
             className="word-input ms-2"
           />
@@ -95,6 +94,7 @@ const Game = () => {
         setRemaning(p);
         setRank((prev) => [...prev, { id: i, c: v, r: p, a: attempt }]);
       } else {
+        
       }
     });
     console.log(rank);
@@ -112,7 +112,7 @@ const Game = () => {
   return (
     <div>
       <div className="container my-5">
-        <h2 className="text-dark fw-bold text-center mb-5">Spelling Game </h2>
+        <h2 className="text-dark fw-bold text-center mb-5">Spelling Game</h2>
         <div className="row">
           <div className="col-lg-9 col-sm-12 mt-4">
             <h6 className="text-dark fw-14 fw-bold ps-2">
@@ -150,10 +150,12 @@ const Game = () => {
             <h6 className="text-dark fw-14 fw-bold mt-5 ms-2">
               Choose the letter that could be used in the above words
             </h6>
-            <div class="keyboard ms-3 d-flex flex-column mt-2">
-              <div class="row d-flex mb-1 flex-wrap">
+            <div className="keyboard ms-3 d-flex flex-column mt-2">
+              <div className="row d-flex mb-1 flex-wrap">
                 {alphabetArray?.map((d, i) =>
                   query !== "" ? (
+
+                    
                     <button
                       type="button"
                       className="key"
